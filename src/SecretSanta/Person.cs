@@ -1,6 +1,4 @@
 namespace SecretSanta {
-    using System;
-
     public class Person {
         public string Name { get; set; }
 

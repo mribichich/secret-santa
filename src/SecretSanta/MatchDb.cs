@@ -1,6 +1,5 @@
 ﻿namespace SecretSanta {
-    public class MatchDb
-    {
+    public class MatchDb {
         public MatchDb(string source, string destination) {
             this.Source = source;
             this.Destination = destination;

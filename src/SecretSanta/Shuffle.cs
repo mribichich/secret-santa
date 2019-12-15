@@ -41,7 +41,7 @@
 
             var box = new byte[11];
             provider.GetBytes(box);
-            
+
             var middle = box[5];
             var middleProd = (double)middle / byte.MaxValue;
             var middleReal = middleProd * total;

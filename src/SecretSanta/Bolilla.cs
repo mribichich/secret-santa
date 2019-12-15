@@ -1,4 +1,4 @@
-﻿namespace SecretSanta {
+namespace SecretSanta {
     using System;
 
     public class Bolilla {

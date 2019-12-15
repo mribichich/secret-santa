@@ -123,8 +123,7 @@
                     .ToList();
 
                 SendEmails(email, user, password, matches, lastLottery.EmailCode);
-            }
-            else {
+            } else {
                 Console.WriteLine("No lotteries found\n");
             }
         }
@@ -208,12 +207,11 @@
         private static void SendEmails(string email, string user, string password, IList<Match> matches, string emailCode) {
             MoreEnumerable.ForEach(
                 matches,
-                f =>
-                    {
-                        //Console.WriteLine($"{f.Person.Name}\t-> {f.Bolilla.Name}");
+                f => {
+                    //Console.WriteLine($"{f.Person.Name}\t-> {f.Bolilla.Name}");
 
-                        SendEmail(email, user, password, f.Person, f.Destination, emailCode);
-                    });
+                    SendEmail(email, user, password, f.Person, f.Destination, emailCode);
+                });
         }
 
         public static void SendEmail(string email, string user, string password, Person person, string secretFriend, string code) {
@@ -234,13 +232,12 @@
 
             mailMessage.Body = person.Name + ":\n\nTu amigo invisible para navidad es: " + secretFriend.ToUpper();
 
-            var client = new SmtpClient("smtp.sendgrid.net", 587)
-                {
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(user, password),
-                };
+            var client = new SmtpClient("smtp.sendgrid.net", 587) {
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(user, password),
+            };
 
             client.Send(mailMessage);
 
@@ -295,8 +292,7 @@
                     Console.Write("*");
 
                     info = Console.ReadKey(true);
-                }
-                else if (info.Key == ConsoleKey.Backspace) {
+                } else if (info.Key == ConsoleKey.Backspace) {
                     if (!string.IsNullOrEmpty(password)) {
                         password = password.Substring(0, password.Length - 1);
 
