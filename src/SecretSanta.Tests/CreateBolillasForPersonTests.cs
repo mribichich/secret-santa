@@ -1,7 +1,9 @@
-﻿namespace SecretSanta.Tests {
+namespace SecretSanta.Tests {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
+    using SecretSanta.Db;
 
     using Xunit;
 
@@ -18,9 +20,9 @@
         [Fact]
         public void TestMethod2() {
             var lotteries = new List<LotteryDb>() {
-                new LotteryDb(new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
-                new LotteryDb(new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
-                new LotteryDb(new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
             };
 
             var result = Program.CreateBolillasForPerson(new List<string>() { "neitana", "marce", "juli" }, lotteries, "juli");
@@ -31,7 +33,7 @@
         [Fact]
         public void TestMethod3() {
             var lotteries = new List<LotteryDb>() {
-                new LotteryDb(new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
             };
 
             var result = Program.CreateBolillasForPerson(new List<string>() { "neitana", "marce", "juli" }, lotteries, "juli");
@@ -42,10 +44,10 @@
         [Fact]
         public void TestMethod4() {
             var lotteries = new List<LotteryDb>() {
-                new LotteryDb(new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
-                new LotteryDb(new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
-                new LotteryDb(new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
-                new LotteryDb(new DateTime(2019, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2019, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
             };
 
             var result = Program.CreateBolillasForPerson(new List<string>() { "neitana", "marce", "juli" }, lotteries, "juli");
@@ -56,10 +58,10 @@
         [Fact]
         public void TestMethod5() {
             var lotteries = new List<LotteryDb>() {
-                new LotteryDb(new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
-                new LotteryDb(new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
-                new LotteryDb(new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
-                new LotteryDb(new DateTime(2019, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2016, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2017, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitana"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2018, 12, 01), new List<MatchDb>() { new MatchDb("juli", "neitan"), }, "1"),
+                new LotteryDb(Guid.NewGuid(),new DateTime(2019, 12, 01), new List<MatchDb>() { new MatchDb("juli", "guli"), }, "1"),
             };
 
             var result = Program.CreateBolillasForPerson(new List<string>() { "neitana", "marce", "juli", "neitan" }, lotteries, "juli");

@@ -1,4 +1,4 @@
-namespace SecretSanta {
+namespace SecretSanta.Configs {
     public class Person {
         public string Name { get; set; }
 

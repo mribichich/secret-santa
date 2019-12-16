@@ -1,4 +1,4 @@
-namespace SecretSanta {
+namespace SecretSanta.Db {
     using System.Collections.Generic;
 
     public class Database {

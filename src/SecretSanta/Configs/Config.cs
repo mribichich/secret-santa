@@ -1,4 +1,4 @@
-namespace SecretSanta {
+namespace SecretSanta.Configs {
     using System.Collections.Generic;
 
     public class Config {
@@ -8,6 +8,6 @@ namespace SecretSanta {
 
         public string Password { get; set; }
 
-        public List<Person> People { get; set; }
+        public List<Group> Groups { get; set; }
     }
 }
